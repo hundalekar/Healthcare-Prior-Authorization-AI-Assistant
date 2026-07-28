@@ -107,7 +107,7 @@ Full breakdown and failure analysis in [RESULTS.md](RESULTS.md).
 ```bash
 # Clone repository
 git clone https://github.com/hundalekar/Healthcare-Prior-Authorization-AI-Assistant.git
-cd Healthcare_Prior_Authorization_AI_Assistant
+cd Healthcare-Prior-Authorization-AI-Assistant
 
 # Create virtual environment
 python -m venv h1venv
