@@ -1,0 +1,25 @@
+# Environment variables
+.env
+
+# Virtual environment
+h1venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (large files - optional, decide later)
+data/raw/*.pdf
+data/processed/

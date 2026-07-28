@@ -1,0 +1,84 @@
+question,expected_policy,expected_pages,retrieved_policies,retrieved_pages,correct_policy_in_top5,correct_page_in_top5,declined,expected_behavior_ok,answer
+What are the medical necessity criteria for MRI of the spine?,0236,[2],"['0236', '0236', '0236', '0236', '0236']","[2, 11, 3, 48, 41]",True,True,False,True,"Aetna considers magnetic resonance imaging (MRI) of the spine medically necessary when any of the following criteria are met:
+* Clinical evidence of spinal stenosis; or
+* Clinical suspicion of a spinal cord or cauda equina compression syndrome; or
+* Congenital anomalies or deformities of the spine; or
+* Diagnosis and evaluation of lumbar epidural lipomatosis; or
+* Evaluation of recurrent symptoms after spinal surgery; or
+* Evaluation prior to epidural injection to rule out tumor or infection and to delineate the optimal anatomical location for performing the injection; or
+* Follow-up of evaluation for spinal malignancy or spinal infection; or
+* Known or suspected myelopathy (e.g., multiple sclerosis) for initial diagnosis when MRI of the brain is negative.
+
+Source: Aetna, Policy 0236 (MRI and CT Spine), Page 2"
+When is dynamic-kinetic MRI considered experimental?,0236,[3],"['0236', '0236', '0171', '0520', '0171']","[18, 18, 19, 63, 33]",True,False,True,False,"The provided policy documents do not contain this information.
+
+Source: Aetna, Policy 0236 (MRI and CT Spine), Page 18"
+When is MRI not medically necessary for spine trauma?,0236,"[3, 7]","['0236', '0236', '0236', '0236', '0236']","[2, 44, 14, 11, 41]",True,False,True,False,The provided policy documents do not contain this information.
+When is knee arthroscopy medically necessary?,0673,"[2, 3]","['0673', '0673', '0171', '0673', '0673']","[2, 100, 11, 3, 20]",True,True,False,True,"Aetna considers arthroscopic knee surgery (with or without partial meniscectomy or meniscal repair) medically necessary for persons presenting with:
+* Significant knee pain plus mechanical symptoms
+* No more than mild osteoarthritis (Kellgren-Lawrence 0, 1, or 2, or modified Outerbridge Grade 0, 1, or 2)
+* Radiologic confirmation of the pathology (X-ray for loose bodies, MRI for meniscal tears and/or loose bodies)
+* Failure of conservative therapy
+
+Additionally, knee arthroscopy is considered medically necessary and covered for persons with radiologically proven pathology that meets the above criteria. 
+
+Source: Aetna, Policy 0673 (Knee Arthroscopy / Osteoarthritis), Page 2
+Source: Aetna, Policy 0673 (Knee Arthroscopy / Osteoarthritis), Page 3"
+What are the criteria for meniscal repair?,0673,"[2, 3, 4]","['0673', '0673', '0673', '0673', '0673']","[2, 3, 127, 121, 2]",True,True,False,True,"Based on the provided policy documents, meniscal repair is considered medically necessary under the following conditions:
+
+* For arthroscopic knee surgery with meniscal repair for persons presenting with significant knee pain plus mechanical symptoms and no more than mild osteoarthritis (Kellgren-Lawrence 0, 1, or 2, or modified Outerbridge Grade 0, 1, or 2) with radiologic confirmation of the pathology (MRI for meniscal tears) and failure of conservative therapy.
+* For traumatic meniscal tears with significant symptoms, no more than mild osteoarthritis (Kellgren-Lawrence 0, 1, or 2, or modified Outerbridge Grade 0, 1, or 2), MRI confirmation of the meniscal pathology, and failure of conservative therapy.
+* For the treatment of medial and/or lateral meniscal root tears for members who have significant symptoms and no more than mild osteoarthritis (Kellgren-Lawrence 0, 1, or 2, or modified Outerbridge Grade 0, 1, or 2).
+* Additionally, meniscal repair should only be considered in situations where the vascular supply to the torn portion of the meniscus is adequate, and the meniscal tissue is not degenerated on imaging.
+
+Source: Aetna, Policy 0673 (Knee Arthroscopy / Osteoarthritis), Page 2
+Source: Aetna, Policy 0673 (Knee Arthroscopy / Osteoarthritis), Page 3"
+What are the indications for cardiac MRI?,0520,"[2, 3, 14]","['0520', '0520', '0520', '0520', '0520']","[14, 73, 13, 31, 49]",True,True,False,True,"Under established guidelines, MRI is used as the diagnostic test for the following indications:
+- Diseases of the aorta
+- Diseases of the pericardium
+- External and internal masses
+- Pathology involving surrounding structures
+- Congenital heart disease
+- Ventricular dysplasia
+
+Additionally, cardiac MRI can be used for the management of cardiotoxicity caused by cancer therapies, as well as the evaluation of cardiac masses and cardiac function, including differentiating between benign and malignant primary cardiac tumors, metastatic disease, and pseudo-tumors.
+
+Source: Aetna, Policy 0520 (Cardiac MRI), Page 14
+Source: Aetna, Policy 0520 (Cardiac MRI), Page 31"
+When is cardiac MRI used for pericardial disease?,0520,"[2, 3]","['0520', '0520', '0520', '0520', '0520']","[14, 31, 73, 68, 31]",True,False,False,True,"Under established guidelines, MRI is used as the diagnostic test for diseases of the pericardium.
+
+Source: Aetna, Policy 0520 (Cardiac MRI), Page 14"
+When is MRCP appropriate for PSC?,0384,"[14, 31]","['0384', '0384', '0384', '0384', '0384']","[14, 14, 14, 12, 14]",True,True,False,True,"Based on the provided policy documents, MRCP is appropriate for primary sclerosing cholangitis (PSC) in the following scenarios:
+* As the first-line choice of modality for the diagnosis of PSC in patients with a cholestatic biochemical profile, replacing ERCP to avoid the serious risks associated with ERCP while providing similar diagnostic accuracy.
+* To confirm a diagnosis of PSC in patients with high pre-test probabilities, or to exclude PSC in patients with low pre-test probabilities.
+* To identify relevant biliary strictures (which, when observed on MRCP, are diagnostic of PSC and may render a liver biopsy unnecessary).
+* For scoring models via MRI/MRCP to be used as prognostic tools associated with long-term outcomes of PSC.
+* To monitor small-duct PSC for the development of large-duct disease.
+* For surveillance of PSC to monitor for the increased risk of cholangiocarcinoma.
+
+Source: Aetna, Policy 0384 (MRCP), Page 14"
+What is the role of MRCP versus ERCP?,0384,"[14, 31]","['0384', '0384', '0384', '0384', '0384']","[14, 8, 7, 33, 37]",True,True,False,True,"Based on the provided policy documents, the role of MRCP versus ERCP includes the following:
+
+* In many cases of suspected primary sclerosing cholangitis (PSC), MRCP is sufficient for diagnosis, allowing the risks associated with ERCP to be avoided. MRCP has replaced ERCP as the first-line choice and evaluation modality for PSC because of the serious risks associated with ERCP (such as cholangitis and post-ERCP pancreatitis), while offering similar diagnostic accuracy.
+* Magnetic resonance cholangiopancreatography may have a role in situations where initial evaluation suggests a benign cause of biliary pathology requiring further cholangiographic confirmation, but not necessarily intervention. 
+* Conversely, patients with a high pre-test likelihood of having a problem requiring therapy (such as sphincterotomy, stone removal, or stenting) should be directed toward ERCP, as the majority of patients evaluated for biliary tract disease require therapy and ERCP possesses therapeutic capability, higher spatial resolution, and remains the gold standard in the diagnostic work-up of the pancreaticobiliary system. MRCP lacks therapeutic capability and is not considered satisfactorily comparable to ERCP in image quality.
+
+Source: Aetna, Policy 0384 (MRCP), Page 14
+Source: Aetna, Policy 0384 (MRCP), Page 8
+Source: Aetna, Policy 0384 (MRCP), Page 7"
+What are the criteria for MRI of extremities?,0171,"[2, 3]","['0171', '0171', '0171', '0171', '0171']","[15, 3, 9, 39, 4]",True,True,False,True,"Based on the provided policy documents, MRI of the extremities (such as hands, knees, and feet) may be considered appropriate for the following:
+
+* Assessment of perfusion in diabetic foot ulcers
+* Diagnosis or monitoring of arthritis
+* Diagnosis or prognosis of spinal cord injury and whiplash-associated disorder
+* Diagnosis of chronic exertional compartment syndrome
+* Diagnosis of suspected upper extremity deep vein thrombosis
+* Evaluation and/or monitoring of disease progression in facioscapulohumeral muscular dystrophy
+* Evaluation of masses, localized infections, non-healing fractures of long bones, and in certain cases, preoperative planning
+
+Source: Aetna, Policy 0171 (MRI Extremities), Page 3
+Source: Aetna, Policy 0171 (MRI Extremities), Page 9"
+When is MRI used for diabetic foot ulcer?,0171,[3],"['0171', '0171', '0171', '0171', '0171']","[3, 36, 36, 2, 9]",True,True,False,True,"MRI of the extremities is indicated for the assessment of perfusion in a diabetic foot ulcer.
+
+Source: Aetna, Policy 0171 (MRI Extremities), Page 3"
+Does Medicare cover MRI of the spine?,DECLINE,[],"['0236', '0236', '0236', '0236', '0236']","[52, 2, 48, 39, 12]",,,True,True,The provided policy documents do not contain this information.
