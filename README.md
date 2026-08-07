@@ -2,7 +2,13 @@
 
 A production-quality RAG (Retrieval-Augmented Generation) application that helps hospital staff find insurance policy requirements for prior authorization decisions. Built with citations, safety guardrails, and multi-policy support across 5 Aetna Clinical Policy Bulletins.
 
-![Homepage](screenshots/01_homepage.png)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://healthcare-pa-ai-assistant-qc9dzhe6gn9cfxzvc7.streamlit.app)
+[![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white)](https://python.org)
+[![LangChain](https://img.shields.io/badge/LangChain-RAG-green)](https://langchain.com)
+
+**Try it live:** [healthcare-pa-ai-assistant.streamlit.app](https://healthcare-pa-ai-assistant-qc9dzhe6gn9cfxzvc7.streamlit.app)
+
+![Homepage](screenshots/01_homepage_answer.png)
 
 ---
 
@@ -33,26 +39,25 @@ It is a **policy retrieval assistant** designed for administrative prior authori
 - **Safety guardrails**: System declines out-of-scope queries rather than hallucinating
 - **Zero hallucinations**: Verified across 12-query evaluation set
 - **100% policy routing accuracy**: Correct payer/procedure identified for every in-scope query
-- **Interactive UI**: Streamlit interface with clickable sample questions and expandable source view
+- **Policy filter dropdown**: Scope queries to a specific policy for targeted retrieval
+- **Chat history**: Previous Q&A pairs persist within a session
+- **Interactive UI**: Streamlit interface with sample questions, expandable source view, and clear/reset
+- **Live deployment**: Hosted on Streamlit Community Cloud with CI/CD via GitHub Actions
+- **Containerized**: Dockerfile included for Docker-based deployment
 
 ---
 
 ## Demo Screenshots
 
-### Answer with Citation
-The system pulls medical necessity criteria directly from Aetna CPB 0236 with proper citation.
+### Multi-Policy Answers with Citations
+The system answers questions across different policies with proper citations to source policy and page number.
 
-![Answer](screenshots/02_answer.png)
-
-### Retrieved Sources View
-Every answer can be traced back to its source chunks with page-level metadata.
-
-![Sources](screenshots/03_sources_a.png)
+![Multi-Policy](screenshots/02_multi_policy.png)
 
 ### Safety Guardrail in Action
-When asked about Medicare (out-of-scope, only Aetna is indexed), the system correctly declines instead of inventing an answer.
+Out-of-scope questions are cleanly declined instead of hallucinating an answer.
 
-![Guardrail](screenshots/04_guardrail.png)
+![Guardrail](screenshots/03_guardrail.png)
 
 ---
 
@@ -67,10 +72,14 @@ When asked about Medicare (out-of-scope, only Aetna is indexed), the system corr
 | Vector Store | FAISS (persisted locally) |
 | LLM | Google Gemini 3.5 Flash-Lite |
 | UI | Streamlit |
+| CI/CD | GitHub Actions |
+| Containerization | Docker |
+| Deployment | Streamlit Community Cloud |
 
 ---
 
 ## Architecture
+
 ```
 PDF Files → PyMuPDF Extract → Text Cleaning → Filtering →
 Chunking (800/150) → BGE Embeddings → FAISS Index →
@@ -125,6 +134,7 @@ cp .env.example .env
 ### Data Setup
 
 Download the following Aetna Clinical Policy Bulletins and place in `data/raw/`:
+
 - CPB 0236 - MRI and CT of the Spine
 - CPB 0673 - Knee Arthroscopy
 - CPB 0171 - MRI of the Extremities
@@ -136,6 +146,7 @@ Available at: `https://www.aetna.com/cpb/medical/data/[policy_number]/[policy_nu
 ### Build Vector Store
 
 Run the ingestion notebook to build the FAISS index:
+
 ```bash
 jupyter notebook notebooks/01_document_analysis.ipynb
 ```
@@ -150,27 +161,40 @@ streamlit run app/streamlit_app.py
 
 Open `http://localhost:8501` in your browser.
 
+### Docker (Optional)
+
+```bash
+docker build -t healthcare-pa-assistant .
+docker run -p 8501:8501 -e GOOGLE_API_KEY=your_key healthcare-pa-assistant
+```
+
 ---
 
 ## Project Structure
+
 ```
 Healthcare_Prior_Authorization_AI_Assistant/
+├── .github/
+│   └── workflows/
+│       └── ci.yml                  # GitHub Actions CI (lint + import tests)
 ├── app/
-│ └── streamlit_app.py # Streamlit UI
+│   └── streamlit_app.py            # Streamlit UI
 ├── data/
-│ ├── raw/ # Aetna PDFs (gitignored)
-│ ├── processed/faiss_index/ # FAISS vectorstore (gitignored)
-│ └── evaluation_results.csv # Test set results
+│   ├── raw/                        # Aetna PDFs (gitignored)
+│   ├── processed/faiss_index/      # FAISS vectorstore
+│   └── evaluation_results.csv      # Test set results
 ├── notebooks/
-│ ├── 01_document_analysis.ipynb # Ingestion pipeline
-│ ├── 02_rag_experiments.ipynb # RAG chain testing
-│ └── 03_evaluation.ipynb # Evaluation runner
-├── screenshots/ # Portfolio screenshots
+│   ├── 01_document_analysis.ipynb  # Ingestion pipeline
+│   ├── 02_rag_experiments.ipynb    # RAG chain testing
+│   └── 03_evaluation.ipynb         # Evaluation runner
+├── screenshots/                    # Portfolio screenshots
 ├── src/
-│ ├── ingestion/ # Load, clean, chunk PDFs
-│ ├── retrieval/ # FAISS vectorstore
-│ └── rag/ # Retriever, prompt, chain
+│   ├── ingestion/                  # Load, clean, chunk PDFs
+│   ├── retrieval/                  # FAISS vectorstore
+│   └── rag/                        # Retriever, prompt, chain
 ├── ARCHITECTURE.md
+├── Dockerfile
+├── .dockerignore
 ├── EXPERIMENT_LOG.md
 ├── RESULTS.md
 ├── requirements.txt
@@ -200,6 +224,7 @@ Healthcare_Prior_Authorization_AI_Assistant/
 ## Design Decisions
 
 Key engineering trade-offs documented in [EXPERIMENT_LOG.md](EXPERIMENT_LOG.md):
+
 - Why chunk size 800 outperformed 2000
 - Why BGE-small was chosen over MiniLM
 - Why merging steps were removed
@@ -217,7 +242,7 @@ Key engineering trade-offs documented in [EXPERIMENT_LOG.md](EXPERIMENT_LOG.md):
 - Hybrid retrieval (BM25 + vector)
 - Cross-encoder reranking
 - Analytics dashboard
-- FastAPI + Docker deployment
+- FastAPI backend
 
 ---
 
@@ -231,5 +256,5 @@ This is a portfolio project for demonstration purposes. **Not for clinical use.*
 
 **Abhishek Mohan Hundalekar**  
 MS Applied Data Science, Syracuse University (Aug 2025 - May 2027)  
-LinkedIn: https://www.linkedin.com/in/abhishekhundalekar/   
-GitHub: https://github.com/hundalekar
+LinkedIn: https://www.linkedin.com/in/abhishekhundalekar/  
+GitHub: https://github.com/hundalekar  
