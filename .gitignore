@@ -22,4 +22,3 @@ Thumbs.db
 
 # Data (large files - optional, decide later)
 data/raw/*.pdf
-data/processed/
