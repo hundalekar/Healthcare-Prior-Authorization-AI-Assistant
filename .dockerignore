@@ -1,0 +1,14 @@
+.env
+h1venv/
+__pycache__/
+*.pyc
+.git/
+.github/
+notebooks/
+screenshots/
+data/raw/
+*.ipynb
+.ipynb_checkpoints/
+.vscode/
+.idea/
+ 
