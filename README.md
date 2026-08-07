@@ -8,7 +8,7 @@ A production-quality RAG (Retrieval-Augmented Generation) application that helps
 
 **Try it live:** [healthcare-pa-ai-assistant.streamlit.app](https://healthcare-pa-ai-assistant-qc9dzhe6gn9cfxzvc7.streamlit.app)
 
-![Homepage](screenshots/01_homepage_answer.png)
+![Homepage](screenshots/homepage_answer.png)
 
 ---
 
@@ -52,12 +52,12 @@ It is a **policy retrieval assistant** designed for administrative prior authori
 ### Multi-Policy Answers with Citations
 The system answers questions across different policies with proper citations to source policy and page number.
 
-![Multi-Policy](screenshots/02_multi_policy.png)
+![Multi-Policy](screenshots/multi_policy.png)
 
 ### Safety Guardrail in Action
 Out-of-scope questions are cleanly declined instead of hallucinating an answer.
 
-![Guardrail](screenshots/03_guardrail.png)
+![Guardrail](screenshots/guardrail.png)
 
 ---
 
